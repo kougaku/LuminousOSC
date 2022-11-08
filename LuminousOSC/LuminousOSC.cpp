@@ -53,6 +53,7 @@ using namespace std;
 
 string g_ip_address;
 int g_port;
+string g_address_pattern;
 int camera_id;
 int show_config_on_startup;
 int g_threshold;
@@ -167,6 +168,10 @@ int LoadConfigFile(const char* filename) {
         else if (word == "PORT") {
             fin >> g_port;
             cout << "  PORT = " << g_port << endl;
+        }
+        else if (word == "ADDRESS_PATTERN") {
+            fin >> g_address_pattern;
+            cout << "  ADDRESS_PATTERN = " << g_address_pattern << endl;
         }
         else if (word == "RANGE_MAX") {
             fin >> g_tracker_range_max;
@@ -451,7 +456,7 @@ int main(int argc, char* argv[]) {
 
         // OSC
         packet.Clear();
-        packet << osc::BeginBundleImmediate << osc::BeginMessage("/points");
+        packet << osc::BeginBundleImmediate << osc::BeginMessage(g_address_pattern.c_str());
         for (cv::Point pos : points) {
             packet << pos.x << pos.y;
             
