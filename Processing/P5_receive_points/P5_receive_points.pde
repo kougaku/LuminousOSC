@@ -10,12 +10,12 @@ void setup() {
 }
 
 synchronized void draw() {
-  background(0);  
+  background(50);  
   textSize(20);
-  for (int i=0; i<points.size(); i++) {
+  for (int i = 0; i < points.size(); i++) {
     Point p = points.get(i);
-    ellipse( p.x, p.y, 10, 10 );
-    text( i, p.x + 10, p.y );
+    ellipse(p.x, p.y, 10, 10);
+    text(i, p.x + 10, p.y + 5);
   }
 }
 
