@@ -120,19 +120,19 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)dependencies\oscpack\include;$(ProjectDir)dependencies\opencv\build\include;$(ProjectDir)dependencies\set_camera</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)dependencies\oscpack-1.1.0\include;$(ProjectDir)dependencies\opencv-4.5.5\build\include;$(ProjectDir)dependencies\set_camera_101</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(ProjectDir)dependencies\opencv\build\x64\vc15\lib;$(ProjectDir)dependencies\oscpack\lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)dependencies\opencv-4.5.5\build\x64\vc15\lib;$(ProjectDir)dependencies\oscpack-1.1.0\lib</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
       <Command>xcopy "$(ProjectDir)settings.txt" $(TargetDir) /Y
-xcopy "$(ProjectDir)dependencies\opencv\build\x64\vc15\bin\opencv_videoio_ffmpeg453_64.dll" $(TargetDir) /Y
-xcopy "$(ProjectDir)dependencies\opencv\build\x64\vc15\bin\opencv_videoio_msmf453_64d.dll" $(TargetDir) /Y
-xcopy "$(ProjectDir)dependencies\opencv\build\x64\vc15\bin\opencv_world453d.dll" $(TargetDir) /Y
+xcopy "$(ProjectDir)dependencies\opencv-4.5.5\build\x64\vc15\bin\opencv_videoio_ffmpeg455_64.dll" $(TargetDir) /Y
+xcopy "$(ProjectDir)dependencies\opencv-4.5.5\build\x64\vc15\bin\opencv_videoio_msmf455_64.dll" $(TargetDir) /Y
+xcopy "$(ProjectDir)dependencies\opencv-4.5.5\build\x64\vc15\bin\opencv_world455.dll" $(TargetDir) /Y
 </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
@@ -144,7 +144,7 @@ xcopy "$(ProjectDir)dependencies\opencv\build\x64\vc15\bin\opencv_world453d.dll"
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)dependencies\oscpack\include;$(ProjectDir)dependencies\opencv\build\include;$(ProjectDir)dependencies\set_camera</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)dependencies\oscpack-1.1.0\include;$(ProjectDir)dependencies\opencv-4.5.5\build\include;$(ProjectDir)dependencies\set_camera_101</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -152,21 +152,21 @@ xcopy "$(ProjectDir)dependencies\opencv\build\x64\vc15\bin\opencv_world453d.dll"
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>false</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(ProjectDir)dependencies\opencv\build\x64\vc15\lib;$(ProjectDir)dependencies\oscpack\lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)dependencies\opencv-4.5.5\build\x64\vc15\lib;$(ProjectDir)dependencies\oscpack-1.1.0\lib</AdditionalLibraryDirectories>
       <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
     </Link>
     <PostBuildEvent>
       <Command>xcopy "$(ProjectDir)settings.txt" $(TargetDir) /Y
-xcopy "$(ProjectDir)dependencies\opencv\build\x64\vc15\bin\opencv_videoio_ffmpeg453_64.dll" $(TargetDir) /Y
-xcopy "$(ProjectDir)dependencies\opencv\build\x64\vc15\bin\opencv_videoio_msmf453_64.dll" $(TargetDir) /Y
-xcopy "$(ProjectDir)dependencies\opencv\build\x64\vc15\bin\opencv_world453.dll" $(TargetDir) /Y
+xcopy "$(ProjectDir)dependencies\opencv-4.5.5\build\x64\vc15\bin\opencv_videoio_ffmpeg455_64.dll" $(TargetDir) /Y
+xcopy "$(ProjectDir)dependencies\opencv-4.5.5\build\x64\vc15\bin\opencv_videoio_msmf455_64.dll" $(TargetDir) /Y
+xcopy "$(ProjectDir)dependencies\opencv-4.5.5\build\x64\vc15\bin\opencv_world455.dll" $(TargetDir) /Y
 </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="dependencies\set_camera\cam_lib.cpp" />
-    <ClCompile Include="dependencies\set_camera\disp_mediatype.cpp" />
-    <ClCompile Include="dependencies\set_camera\s_malloc.c" />
+    <ClCompile Include="dependencies\set_camera_101\cam_lib.cpp" />
+    <ClCompile Include="dependencies\set_camera_101\disp_mediatype.cpp" />
+    <ClCompile Include="dependencies\set_camera_101\s_malloc.c" />
     <ClCompile Include="LuminousOSC.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

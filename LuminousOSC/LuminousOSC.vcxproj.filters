@@ -21,13 +21,13 @@
     <ClCompile Include="LuminousOSC.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="dependencies\set_camera\cam_lib.cpp">
+    <ClCompile Include="dependencies\set_camera_101\cam_lib.cpp">
       <Filter>ソース ファイル\set_camera</Filter>
     </ClCompile>
-    <ClCompile Include="dependencies\set_camera\disp_mediatype.cpp">
+    <ClCompile Include="dependencies\set_camera_101\disp_mediatype.cpp">
       <Filter>ソース ファイル\set_camera</Filter>
     </ClCompile>
-    <ClCompile Include="dependencies\set_camera\s_malloc.c">
+    <ClCompile Include="dependencies\set_camera_101\s_malloc.c">
       <Filter>ソース ファイル\set_camera</Filter>
     </ClCompile>
   </ItemGroup>
