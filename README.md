@@ -1,46 +1,38 @@
 # LuminousOSC
 An application that detects luminous points from camera images and sends their positions via OSC
 
-![LuminousOSC_overview](https://user-images.githubusercontent.com/736387/200601487-351cacce-3ddb-4392-9f1e-56ff5bb7ac3a.png)
+![LuminousOSC_overview_v100](https://user-images.githubusercontent.com/736387/205011797-a971f181-f9f6-4f87-8a80-c9c010369a19.png)
+
 
 ## Download
 
-Please download the latest version from releases.  
-https://github.com/kougaku/LuminousOSC/releases
+Please download the latest version from [releases](https://github.com/kougaku/LuminousOSC/releases).  
 
 ## How to Use
-
-1. Run LuminousOSC.exe. Then webcam is opened, detection and sending are started.
+1. Run LuminousOSC. Then webcam is opened, detection and sending are started.
+1. Set the maximum number of points you wish to send in GUI.
 1. Adjust threshold for binarization. To successfully extract luminous blobs, it is important to adjust the exposure in the camera settings.
-1. Adjust min size and max size for detecting luminous points.
+1. Adjust max area and min area for detecting luminous points.
+1. Adjust matching distance for good tracking.
 1. Receive the OSC message that contains the coordinates of points in your application. 
 
-Video file also can be used as input.  
-(Windows) Drag-and-drop a video file onto the LuminousOSC.exe.  
-(Mac) `./LuminousOSC your_video.mp4`
+Video file also can be used as input. Select "Load Video File" in the GUI. On Windows, to support QuickTime video files or files like MP4 video you will need to install the video codecs onto your machine. K-Lite Codec Pack is recommended.
 
-![example](https://user-images.githubusercontent.com/736387/200622713-89923d33-112c-4e76-9c95-97f9779ea7e4.png)
+![v100-camera](https://user-images.githubusercontent.com/736387/205016249-a9174901-62d3-4838-80c1-324f155a6adf.png)
 
 ## OSC message
+LuminousOSC sends position and ID number of luminous point via OSC.
 
 - Address Pattern: /points
-  - This is default. You can change in settings.txt.
-- Data (int values): x0, y0, x1, y1, x2, y2, ... xn, yn
+  - This is default. You can change on GUI.
+- Data (int values): x0, y0, id0, x1, y1, id1, x2, y2, id2 ... xn, yn, idn
 
-Note:
-LuminousOSC currently does not have a feature to track multiple points. If you want to track multiple points, make the correspondence based on the proximity of the coordinate values between frames. See P5_tracking_demo that implements a simple tracking.
-
-## Receiving code examples (Processing)
-Requires oscP5 library.
-
-- P5_receive_points : Very simple example. Just receive OSC message and draw the points.
-- P5_tracking_demo : Simple tracking demo. It matches points that are close in distance between frames.
+## Receiving code example
+P5_receiver_demo is very simple example written in Processing.  
+Just receive OSC message and draw the points. It requires oscP5 library. 
   
-https://user-images.githubusercontent.com/736387/201339470-30560083-9656-4e58-b376-af3f73c1f6a4.mp4
-
-
+  
+https://user-images.githubusercontent.com/736387/205017269-5cb456cc-97db-430f-a8a0-12c54011cba8.mp4
 
 ## Dependencies
-- [oscpack](http://www.rossbencina.com/code/oscpack)
-- [OpenCV](https://opencv.org/)
-- [set_camera](https://saibara.sakura.ne.jp/program/directshow/)
+openFrameworks (v0.11.2), addons : ofxCv, ofxGui, ofxOpenCV, ofxOsc, ofxXmlSettings
