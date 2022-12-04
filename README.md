@@ -14,7 +14,7 @@ Please download the latest version from [releases](https://github.com/kougaku/Lu
 1. Adjust threshold for binarization. To successfully extract luminous blobs, it is important to adjust the exposure in the camera settings.
 1. Adjust max area and min area for detecting luminous points.
 1. Adjust matching distance for good tracking.
-1. Receive the OSC message that contains the coordinates of points in your application. 
+1. In your application, receive the OSC message that contains the position and ID number of the detected points.
 
 Video file also can be used as input. Select "Load Video File" in the GUI. On Windows, to support QuickTime video files or files like MP4 video you will need to install the video codecs onto your machine. K-Lite Codec Pack is recommended.
 
